@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pixel Art Maker!</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Lab: Pixel Art Maker</h1>
+
+  <h2>Choose Grid Size</h2>
+
+  <form id="sizePicker">
+    Grid Height:
+    <input type="number" id="input_height" name="height" min="1" max="30" value="10">
+    Grid Width:
+    <input type="number" id="input_width" name="width" min="1" max="30" value="10">
+    <input type="submit">
+  </form>
+
+  <h2>Design Canvas</h2>
+
+  <div id="toolbar">
+
+    <button class="toolbar-button" id="undo-button" disabled>
+      <i class="fa fa-undo fa-lg" aria-hidden="true"></i>
+      <span class="description-box">Undo (Ctrl+Z)</span>
+    </button>
+
+    <button class="toolbar-button" id="redo-button" disabled>
+      <i class="fa fa-undo fa-flip-horizontal fa-lg" aria-hidden="true"></i>
+      <span class="description-box">Redo (Ctrl+Y)</span>
+    </button>
+
+    <label class="toolbar-label">
+      <input type="color" id="color_picker">
+      <img src="icons/tint.png">
+      <span class="description-box">Color picker</span>
+    </label>
+
+    <label class="toolbar-label">
+      <input type="radio" id="pencil" name="action" checked>
+      <img src="icons/pencil.png">
+      <span class="description-box">Pencil</span>
+    </label>
+
+    <label class="toolbar-label">
+      <input type="radio" id="fill_with_color" name="action">
+      <img src="icons/bucket.png">
+      <span class="description-box">Fill with color</span>
+    </label>
+
+    <label class="toolbar-label">
+      <input type="radio" id="eraser" name="action">
+      <img src="icons/eraser.png">
+      <span class="description-box">Eraser</span>
+    </label>
+
+    <label class="toolbar-label">
+      <input type="radio" id="pick_color" name="action">
+      <img src="icons/eyedropper.png">
+      <span class="description-box">Color dropper</span>
+    </label>
+
+  </div>
+
+  <table id="pixel_canvas"></table>
+
+  <script src="js/designs.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/actions.js"></script>
+  <script src="js/undomanager.js"></script>
+
+</body>
+</html>
